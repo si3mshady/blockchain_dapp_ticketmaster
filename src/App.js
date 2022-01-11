@@ -3,25 +3,22 @@ import './App.css';
 import Event from './components/Event'
 import starterData from './MasterTicketMasterData.json'
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-
 
 function App() {
   const [events, setEvents] = useState([])
 
   useEffect(() => {
     //clean starter data of undefined element which causes issues     
-  const result = starterData._embedded.events.filter((event) => {
-    return event.priceRanges !== undefined     
+      const result = starterData._embedded.events.filter((event) => {
+        return event.priceRanges !== undefined     
   })  
       setEvents(result)
 
   }, [])
 
   return (
-    <Box sx={{ width: '100%', display: 'flex',flexWrap: 'wrap', justifyContent: 'space-around',m:5}}> 
-      
-      {
+    <Box sx={{ width: '100%', display: 'flex',flexWrap: 'wrap', justifyContent: 'space-around'}}> 
+            {
       
       events.map(event => (<Event teamName={event.name}
         price={event.priceRanges[0].min}  

@@ -10,15 +10,15 @@ const Event = ({id,teamName,teamLogo, info, price,date,soldOut}) => {
     return (
         <div style={{margin: "10px", height: "100%", boxShadow: "10px 5px 5px gray"}}>
      
-        <Card  sx={{ minHeight:300, width: "200px" }}>
+        <Card  sx={{ height:350, width: "200px" }}>
                 <CardMedia
                     
-                    component="img"                    
+                    component="img"                 
                     image={teamLogo}
                     alt="teamLogo"
                 />
-                <CardContent>
-                    <Typography gutterBottom variant="p" component="div">
+                <CardContent style={{lineHeight: '20Hpx'}}>
+                    <Typography style={{display: "block", fontFamily: 'Permanent Marker'}} gutterBottom variant="p" component="div">
                     {teamName}
                     </Typography>
 
@@ -26,14 +26,13 @@ const Event = ({id,teamName,teamLogo, info, price,date,soldOut}) => {
                     {date}
                     </Typography>
 
-
-                    <Typography variant="p"  style={{display: "block"}}  color="text.secondary">
+                    <Typography variant="p"  style={{display: "block", fontFamily: 'Permanent Marker'}}  color="text.secondary">
                     ${price}
                     </Typography>     
 
                 </CardContent>
                 <CardActions>
-                    <Button variant="outlined"  size="small">BUY</Button>        
+                    <Button style={{display: "block", fontFamily: 'Permanent Marker'}} variant="outlined"  size="small">BUY</Button>        
                 </CardActions>
    
     </Card>
@@ -42,8 +41,7 @@ const Event = ({id,teamName,teamLogo, info, price,date,soldOut}) => {
   }
 
 
-
-
-
-
 export default Event;
+
+
+// TODO need to create a function that will receive props for button and send off Smart contract 

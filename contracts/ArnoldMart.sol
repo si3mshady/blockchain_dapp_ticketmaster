@@ -3,7 +3,18 @@ pragma solidity ^0.8.0;
 
 import "hardhat/console.sol";
 
-contract Greeter {
+// create struct that represents assest ticket
+// create function that lists all tickets sold 
+// create function that lists all remaining tickets 
+// create function that return all assests sold on blockchain 
+// Use Counter class
+// Use Security Reentry 
+// import NFT library 
+// create mapping of address to ticket id sold 
+
+
+contract ArnoldMart {
+
     string private greeting;
 
     constructor(string memory _greeting) {

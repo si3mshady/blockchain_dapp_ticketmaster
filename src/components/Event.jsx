@@ -5,8 +5,16 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import '../App.css'
+import {useContext} from 'react'
+
+import { ChainContext}  from '../context/Context'
+
+
 
 const Event = ({id,teamName,teamLogo, price,date,soldOut}) => {
+    const { connectWallet, makePurchase, connectedAccount } = useContext(ChainContext)
+    
+    
     return (
         <div style={{margin: "10px", height: "100%", boxShadow: "10px 5px 5px gray"}}>
      
@@ -30,16 +38,22 @@ const Event = ({id,teamName,teamLogo, price,date,soldOut}) => {
                     ${price}
                     </Typography>     
 
-                    <Typography variant="p"  style={{display: "block", fontFamily: 'Permanent Marker'}}  color="text.secondary">
-                    ${id}
+                    <Typography  variant="p"  style={{fontSize:"10px", display: "block", fontFamily: 'Permanent Marker'}}  color="text.secondary">
+                    {id}
                     </Typography>     
-
-                    
+           
                     
 
                 </CardContent>
                 <CardActions>
-                    <Button style={{display: "block", fontFamily: 'Permanent Marker'}} variant="outlined"  size="small">BUY</Button>        
+                    <Button onClick={() => makePurchase(id)} style={{display: "block", fontFamily: 'Permanent Marker'}} variant="outlined"  size="small">BUY</Button>    
+                  
+                    {!connectedAccount && (
+
+                    <Button onClick={connectWallet} style={{display: "block", fontFamily: 'Permanent Marker'}} variant="outlined"  size="small">Connect</Button>                       
+                    
+                    )}
+                     
                 </CardActions>
    
     </Card>

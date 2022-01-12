@@ -1,12 +1,12 @@
-//SPDX-License-Identifier: Unlicense
+//SPDX-License-Identifier: Unlicensed
 pragma solidity ^0.8.3;
 
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+// import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-import "hardhat/console.sol";
+// import "hardhat/console.sol";
 
-contract ArnoldMart  {
+contract ArnoldMart {
     
   address payable owner;
   address  payable  acc2 = payable(0xbDA5747bFD65F08deb54cb465eB87D40e51B197E);

@@ -1,26 +1,40 @@
 //SPDX-License-Identifier: Unlicense
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.3;
+
+
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 import "hardhat/console.sol";
 
-// create struct that represents assest ticket
-// create function that lists all tickets sold 
-// create function that lists all remaining tickets 
-// create function that return all assests sold on blockchain 
-// Use Counter class
-// Use Security Reentry 
-// import NFT library 
-// create mapping of address to ticket id sold 
+contract ArnoldMart  {
+    
+  address payable owner;
+  address  payable  acc2 = payable(0xbDA5747bFD65F08deb54cb465eB87D40e51B197E);
+  TicketSale[] purchasedTickets;
 
+  constructor() {owner = payable(msg.sender);
+  
+  } 
 
-contract ArnoldMart {
+  struct TicketSale {
+    string ticketid;
+    address buyer;
+    uint ticketPrice;   
+    bool sold;
+  }
 
-    struct File {
-        string hash;
-        string fileName;
-        string fileType;
-        uint256 date;
-    }
+  mapping(string => TicketSale) private buyerTicketMapping;
+
+  event Sold(address buyer, string ticketId, uint price);
+
+  function  makeSale(string  memory id) public payable {
+      buyerTicketMapping[id] = TicketSale(id,msg.sender,msg.value,true);
+      purchasedTickets.push(TicketSale(id,msg.sender,msg.value,true));      
+      acc2.transfer(msg.value);
+      emit Sold(msg.sender, id, msg.value);
+
+  }
+
 
 
 }

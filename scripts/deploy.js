@@ -3,7 +3,7 @@ const hre = require("hardhat");
 
 const main =  async () =>  {
  
-      const ArnoldMart = await hre.ethers.getContractFactory("ArnoldMart.sol");
+      const ArnoldMart = await hre.ethers.getContractFactory("ArnoldMart");
       const am = await ArnoldMart.deploy();
       await am.deployed();
       console.log("ArnoldMart deployed to:", am.address);
@@ -11,8 +11,6 @@ const main =  async () =>  {
 
 
 const runMain = async () => {
-
-
   try {
       await main();
       process.exit(0);

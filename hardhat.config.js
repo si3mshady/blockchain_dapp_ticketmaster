@@ -2,7 +2,7 @@
 require('@nomiclabs/hardhat-waffle');
 
 module.exports = {
-  solidity: '0.8.0',
+  solidity: '0.8.3',
   networks: {
     ropsten: {
       url: 'https://eth-ropsten.alchemyapi.io/v2/0ticHtAIa7_ntr_e4-wc9CWZtWbHnynp',

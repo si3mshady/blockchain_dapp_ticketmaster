@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import '../App.css'
 
-const Event = ({id,teamName,teamLogo, info, price,date,soldOut}) => {
+const Event = ({id,teamName,teamLogo, price,date,soldOut}) => {
     return (
         <div style={{margin: "10px", height: "100%", boxShadow: "10px 5px 5px gray"}}>
      
@@ -29,6 +29,13 @@ const Event = ({id,teamName,teamLogo, info, price,date,soldOut}) => {
                     <Typography variant="p"  style={{display: "block", fontFamily: 'Permanent Marker'}}  color="text.secondary">
                     ${price}
                     </Typography>     
+
+                    <Typography variant="p"  style={{display: "block", fontFamily: 'Permanent Marker'}}  color="text.secondary">
+                    ${id}
+                    </Typography>     
+
+                    
+                    
 
                 </CardContent>
                 <CardActions>
